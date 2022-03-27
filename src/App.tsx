@@ -1,4 +1,4 @@
-import Main from "./views/components/common/Main";
+import Main from "./views/pages/common/Main";
 
 const App = () => {
   return (
