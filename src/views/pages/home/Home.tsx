@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import ProductService from '../../../services/Product.service';
+import Slider from '../../components/custom/Slider';
 import TheLayout from "../TheLayout";
+import Collections from './Collections';
 import ProductArray from './ProductArray';
 
 const Home = () =>  {
@@ -14,7 +16,8 @@ const Home = () =>  {
 
     return (
         <TheLayout title="Suruchi Fashion Ecommerce">
-            <h2>this is home page</h2>
+            <Slider />
+            <Collections />
             <ProductArray products={products} />
         </TheLayout>
     )
