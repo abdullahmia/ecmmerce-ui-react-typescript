@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import useAPI from '../../../hooks/useAPI';
 import ProductService from '../../../services/Product.service';
 import Slider from '../../components/custom/Slider';
 import TheLayout from "../TheLayout";
@@ -6,19 +6,16 @@ import Collections from './Collections';
 import ProductArray from './ProductArray';
 
 const Home = () =>  {
-    const [products, setProducts] = useState<[] | any>([]);
-
-    useEffect(() => {
-        ProductService.getAllProducts()
-            .then((data) => setProducts(data))
-            .catch(error => console.log(error))
-    }, [])
-
+    const { data: products } = useAPI<IProduct[]>(ProductService.getAllProducts);
     return (
         <TheLayout title="Suruchi Fashion Ecommerce">
             <Slider />
-            <Collections />
-            <ProductArray products={products} />
+            <div>
+                <Collections />
+            </div>
+            <div>
+                { products && <ProductArray products={products} /> }
+            </div>
         </TheLayout>
     )
 }
