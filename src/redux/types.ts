@@ -3,3 +3,8 @@ export enum cartActionTypes {
     REMOVE_FROM_CART = 'remove_from_cart',
     CLEAR_CART = 'clear_cart'
 }
+
+export enum authActionTypes {
+    LOGIN = "login",
+    LOGOUT = "logout"
+}

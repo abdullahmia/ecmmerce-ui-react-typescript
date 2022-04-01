@@ -1,6 +1,6 @@
 import { useEffect, FunctionComponent } from 'react';
-import Footer from './common/Footer';
-import Header from './common/Header';
+import Footer from './layout/Footer';
+import Header from './layout/Header';
 
 const TheLayout: FunctionComponent<{title: string}> = ({title, children}) => {
     useEffect(() => {

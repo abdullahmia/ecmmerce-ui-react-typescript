@@ -29,9 +29,9 @@ const Header = () => {
         {/* Main Header */}
         <div className="container mx-auto py-5">
             <div className="grid grid-cols-3 items-center">
-                <div>
+                <Link to={'/'}>
                     <img src={logo} alt="" />
-                </div>
+                </Link>
                 <div className="">
                     <div className="flex">
                         <input type="text" placeholder="Keywords here...." className="w-full border border-gray-200 p-3" />
@@ -42,10 +42,10 @@ const Header = () => {
                 </div>
 
                 <div className="flex gap-3 items-center ml-auto">
-                    <div className="flex flex-col items-center">
+                    <Link to='/login' className="flex flex-col items-center">
                         <AiOutlineUser className="text-3xl" />
-                        <p className="text-gray-500">My Account</p>
-                    </div>
+                        <p className="text-gray-500">My Account </p>
+                    </Link>
                     <div className="flex flex-col items-center">
                         <AiFillHeart className="text-3xl" />
                         <p className="text-gray-500">Wish List</p>
