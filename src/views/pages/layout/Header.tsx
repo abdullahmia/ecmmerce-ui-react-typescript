@@ -60,7 +60,7 @@ const Header = () => {
         </div>
 
         {/* Navber */}
-        <div className="border border-t border-b-0 border-gray-200 py-5">
+        <div className="border border-gray-200 py-5">
             <div className="container mx-auto">
                 <div className="grid grid-cols-2">
                     <div className='flex gap-9'>

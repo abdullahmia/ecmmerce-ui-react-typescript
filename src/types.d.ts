@@ -8,8 +8,16 @@ interface IProduct {
     store: string
 }
 
+// Auth
 interface ILoginProps {
     email: string,
+    password: string
+}
+
+interface ISignupProps {
+    name: string,
+    email: string,
+    phone: string,
     password: string
 }
 
@@ -21,3 +29,13 @@ interface IAuthUser {
     status: string,
     token: string
 }
+
+interface ISignupAuthUser {
+    name: string,
+    email: string,
+    phone: string
+    id: string,
+    role: string,
+    status: string,
+}
+

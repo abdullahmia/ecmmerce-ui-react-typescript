@@ -2,6 +2,8 @@ import { Dispatch } from 'react';
 import AuthService from '../../services/Auth.service';
 import { authActionTypes, authActionType } from "../types"
 
+
+// Login Account
 export const login = (payload: ILoginProps) => {
     // email, password => backend
     // verify
@@ -22,4 +24,13 @@ export const login = (payload: ILoginProps) => {
              })
          });
     }
+}
+
+// Register an account
+export const singup = (payload: ISignupProps, cb: any) => {
+    AuthService.signup(payload)
+        .then((user) => {
+            cb();
+        })
+        .catch((error) => console.log(error))
 }
