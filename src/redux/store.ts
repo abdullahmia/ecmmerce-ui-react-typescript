@@ -1,12 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import cartReducer from './reducers/cartReducer';
 import reduxThunk from 'redux-thunk';
+import authReducer from './reducers/authReducer';
+import cartReducer from './reducers/cartReducer';
 
 // combine all of thoose reducers
 const rootReducer = combineReducers({
     cart: cartReducer,
-    // auth: authReducer
+    auth: authReducer,
 })
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(reduxThunk)));

@@ -1,10 +1,51 @@
+// Cart Type Interface
 export enum cartActionTypes {
     ADD_TO_CART = 'ad_to_cart',
     REMOVE_FROM_CART = 'remove_from_cart',
     CLEAR_CART = 'clear_cart'
 }
 
+interface AddToCart {
+    type: cartActionTypes.ADD_TO_CART,
+    payload: IProduct
+}
+
+interface RemoveFromCart {
+    type: cartActionTypes.REMOVE_FROM_CART,
+    payload: string
+}
+
+interface ClearCart {
+    type: cartActionTypes.CLEAR_CART
+}
+
+export type cartActionType = AddToCart | RemoveFromCart | ClearCart;
+
+
+// Auth types Interface
 export enum authActionTypes {
-    LOGIN = "login",
+    LOGIN_SUCCESS = "login/success",
+    LOGIN_PENDING = "login/pending",
+    LOGIN_FAIL = "login/fail",
     LOGOUT = "logout"
 }
+
+interface loginSuccess {
+    type: authActionTypes.LOGIN_SUCCESS,
+    payload: IAuthUser
+}
+
+interface loginPending {
+    type: authActionTypes.LOGIN_PENDING
+}
+
+interface loginError {
+    type: authActionTypes.LOGIN_FAIL,
+    payload: string
+}
+
+interface logout {
+    type: authActionTypes.LOGOUT
+}
+
+export type authActionType = loginSuccess | loginPending | loginError | logout;
